@@ -264,14 +264,14 @@ const StreamingText = ({ text }: { text: string }) => {
     <div className="flex items-center gap-2">
       <div
         className={cn(
-          'text-sm leading-relaxed text-transparent bg-red-500',
+          'bg-gradient-to-r from-neutral-500 via-neutral-300 to-neutral-500 bg-[length:200%_100%] bg-clip-text text-sm leading-relaxed text-transparent',
           isComplete ? 'animate-shine-slow' : '',
         )}
       >
         {isThinking ? (
           <TextShimmer duration={1}>Thinking...</TextShimmer>
         ) : (
-          <span className='text-green-400'>{displayText}</span>
+          <span>{displayText}</span>
         )}
         {!isComplete && !isThinking && (
           <span className="animate-blink bg-primary ml-0.5 inline-block h-4 w-0.5"></span>
@@ -723,7 +723,7 @@ const MoreAboutQuery = ({
   const isPending = false; 
   const error = null;
   const data={
-    text:"Hello sadjksadThe Power and Promise of Open Source SoftwareOpen source software (OSS) has transformed the way the world builds, uses, and thinks about technology. It refers to software whose source code is made available to the public for use, modification, and distribution. This model, based on principles of transparency, collaboration, and community-driven development, has given rise to some of the most critical infrastructure and tools in modern computing. From operating systems like Linux to web browsers like Mozilla Firefox and frameworks like React.js, open source is at the heart of the digital world.1. Origins and PhilosophyThe open source movement began in the 1980s, largely as a reaction to the increasing trend of proprietary software. Richard Stallman, one of the pioneers of the movement, founded the Free Software Foundation in 1985 and introduced the concept of “free software” — not in terms of price, but freedom. Later, in the late 1990s, the term “open source” was coined to make the concept more business-friendly and practical for commercial adoption.The philosophy of open source rests on several core values:Freedom to use the software for any purposeFreedom to study how the software works and modify itFreedom to distribute copiesFreedom to distribute modified versions",
+    text:"Hello sadjksadThe Power and Promise of Open Source SoftwareOpen source software (OSS) has transformed    Promise of Open Source SoftwareOpen source software (OSS) has transformed Promise of Open Source SoftwareOpen source software (OSS) has transformed Promise of Open Source SoftwareOpen source software (OSS) has transformed Promise of Open Source SoftwareOpen source software (OSS) has transformed Promise of Open Source SoftwareOpen source software (OSS) has transformed the way the world builds, uses, and thinks about technology. It refers to software whose source code is made available to the public for use, modification, and distribution. This model, based on principles of transparency, collaboration, and community-driven development, has given rise to some of the most critical infrastructure and tools in modern computing. From operating systems like Linux to web browsers like Mozilla Firefox and frameworks like React.js, open source is at the heart of the digital world.1. Origins and PhilosophyThe open source movement began in the 1980s, largely as a reaction to the increasing trend of proprietary software. Richard Stallman, one of the pioneers of the movement, founded the Free Software Foundation in 1985 and introduced the concept of “free software” — not in terms of price, but freedom. Later, in the late 1990s, the term “open source” was coined to make the concept more business-friendly and practical for commercial adoption.The philosophy of open source rests on several core values:Freedom to use the software for any purposeFreedom to study how the software works and modify itFreedom to distribute copiesFreedom to distribute modified versions",
 
     sources: [
       { id: '1', title: 'Source 1', url: 'https://example.com/1' },

@@ -54,6 +54,7 @@ const DialogContent = React.forwardRef<
         showOverlay
           ? 'bg-panelLight dark:bg-panelDark w-full max-w-[500px] rounded-xl border p-6'
           : '',
+          'max-h-[70vh] overflow-y-auto',
         className,
       )}
       {...props}
