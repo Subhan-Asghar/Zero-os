@@ -710,38 +710,25 @@ const MoreAboutQuery = ({
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }) => {
-  // const trpc = useTRPC();
-  // const {
-  //   mutate: doSearch,
-  //   isPending,
-  //   // data,
-  //   error,
-  // } = useMutation(trpc.ai.webSearch.mutationOptions());
-// test
-  
-    
-  const isPending = false; 
-  const error = null;
-  const data={
-    text:"Hello sadjksadThe Power and Promise of Open Source SoftwareOpen source software (OSS) has transformed    Promise of Open Source SoftwareOpen source software (OSS) has transformed Promise of Open Source SoftwareOpen source software (OSS) has transformed Promise of Open Source SoftwareOpen source software (OSS) has transformed Promise of Open Source SoftwareOpen source software (OSS) has transformed Promise of Open Source SoftwareOpen source software (OSS) has transformed the way the world builds, uses, and thinks about technology. It refers to software whose source code is made available to the public for use, modification, and distribution. This model, based on principles of transparency, collaboration, and community-driven development, has given rise to some of the most critical infrastructure and tools in modern computing. From operating systems like Linux to web browsers like Mozilla Firefox and frameworks like React.js, open source is at the heart of the digital world.1. Origins and PhilosophyThe open source movement began in the 1980s, largely as a reaction to the increasing trend of proprietary software. Richard Stallman, one of the pioneers of the movement, founded the Free Software Foundation in 1985 and introduced the concept of “free software” — not in terms of price, but freedom. Later, in the late 1990s, the term “open source” was coined to make the concept more business-friendly and practical for commercial adoption.The philosophy of open source rests on several core values:Freedom to use the software for any purposeFreedom to study how the software works and modify itFreedom to distribute copiesFreedom to distribute modified versions",
+  const trpc = useTRPC();
+  const {
+    mutate: doSearch,
+    isPending,
+    data,
+    error,
+  } = useMutation(trpc.ai.webSearch.mutationOptions());
 
-    sources: [
-      { id: '1', title: 'Source 1', url: 'https://example.com/1' },
-      { id: '2', title: 'Source 2', url: 'https://example.com/2' },
-    ],
-  }
-  
-  // const handleSearch = useCallback(() => {
-  //   doSearch({
-  //     query: query,
-  //   });
-  // }, [query, doSearch]);
+  const handleSearch = useCallback(() => {
+    doSearch({
+      query: query,
+    });
+  }, [query, doSearch]);
 
-  // useEffect(() => {
-  //   if (open && query) {
-  //     handleSearch();
-  //   }
-  // }, [open, query, handleSearch]);
+  useEffect(() => {
+    if (open && query) {
+      handleSearch();
+    }
+  }, [open, query, handleSearch]);
 
   const findSource = useCallback(
     (id: string) => {
@@ -777,7 +764,7 @@ const MoreAboutQuery = ({
           ) : data ? (
             <StreamingText text={replaceSourcesInText(data.text)} />
           ) : error ? (
-            <p>Error: {error}</p>
+            <p>Error: {error.message}</p>
           ) : (
             <Loader2 className="animate-spin" />
           )}
